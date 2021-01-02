@@ -38,7 +38,7 @@ function rs_woo_account_settings( $settings ) {
         $settings[] = array(
                 'title'    => __( 'When "Free Shipping" is available during checkout: ', 'woocommerce' ),
                 'desc'     => __( '', 'woocommerce' ),
-                'id'       => 'wc_hide_shipping_options',
+                'id'       => 'wc_hide_shipping_options_cost_0',
                 'type'     => 'radio',
                 'desc_tip' => true,
                 'options'  => array( 'hide_all' => 'Hide all other shipping methods and only show "Free Shipping"', 'hide_except_local' => 'Hide all other shipping methods and only show "Free Shipping" and "Local Pickup" ' ),
