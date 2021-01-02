@@ -81,6 +81,7 @@ function wc_hide_shipping_when_free_is_available_keep_local( $rates, $package ) 
     if ( ! empty( $new_rates ) ) {
         foreach ( $rates as $rate_id => $rate ) {
             if ('local_pickup' === $rate->method_id ) {
+	            debug_to_console($rate);
                 $new_rates[ $rate_id ] = $rate;
                 break;
             }
@@ -95,6 +96,18 @@ function wc_hide_shipping_when_free_is_available_keep_local( $rates, $package ) 
     return $rates;
               }
         }
+}
+
+function debug_to_console($data, $context = 'Debug in Console') {
+
+	// Buffering to solve problems frameworks, like header() in this and not a solid return.
+	ob_start();
+
+	$output  = 'console.info(\'' . $context . ':\');';
+	$output .= 'console.log(' . json_encode($data) . ');';
+	$output  = sprintf('<script>%s</script>', $output);
+
+	echo $output;
 }
 
 function rs_update_default_option(){
