@@ -84,7 +84,7 @@ function wc_hide_shipping_when_free_is_available_keep_local( $rates, $package ) 
                 $new_rates[ $rate_id ] = $rate;
                 break;
             }
-            if ('flat_rate' === $rate->method_id and $rate->cost <= 0 ) {
+            if ('flat_rate' === $rate->method_id and $rate->cost->value <= 0 ) {
                 $new_rates[ $rate_id ] = $rate;
                 break;
             }
