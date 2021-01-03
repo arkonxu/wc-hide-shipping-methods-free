@@ -81,7 +81,7 @@ function wc_hide_shipping_when_free_is_available_keep_local( $rates, $package ) 
     if ( ! empty( $new_rates ) ) {
         foreach ( $rates as $rate_id => $rate ) {
             if ('local_pickup' === $rate->method_id ) {
-	            debug_to_console( 'DEBUGGGGGGG: ' . $rate->method_id );
+	            debug_to_console( 'DEBUGGGGGGG');
                 $new_rates[ $rate_id ] = $rate;
                 break;
             }
